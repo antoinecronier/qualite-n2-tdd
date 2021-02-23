@@ -1,4 +1,4 @@
-package com.tactfactory.tp2tdd;
+package com.tactfactory.tp2tdd.fusee.name;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
