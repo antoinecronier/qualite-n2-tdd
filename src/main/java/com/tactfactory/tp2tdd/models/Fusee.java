@@ -18,7 +18,7 @@ public class Fusee {
     ) {
       throw new Exception();
     }
-    this.name = Character.toString(name.charAt(0)).toUpperCase() + name.substring(1);
+    this.name = Character.toString(name.charAt(0)).toUpperCase() + name.substring(1).toLowerCase();
   }
 
   public String getName() {
