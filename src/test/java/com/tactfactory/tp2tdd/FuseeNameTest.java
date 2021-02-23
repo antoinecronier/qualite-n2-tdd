@@ -1,5 +1,7 @@
 package com.tactfactory.tp2tdd;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import com.tactfactory.tp2tdd.models.Fusee;
 import com.tactfactory.tp2tdd.utils.GenericNameTest;
 import com.tactfactory.tp2tdd.utils.StringUtils;
@@ -28,7 +30,29 @@ public class FuseeNameTest {
   }
 
   /**
-   * testNameStartWithMajKo test function.
+   * testNameStartWithMajNull test function.
+   */
+  @Test
+  public void testNameStartWithMajNull() {
+    Fusee fusee = new Fusee();
+    assertThrows(Exception.class, () -> {
+        fusee.setName(null);
+    });
+  }
+
+  /**
+   * testNameStartWithMajEmpty test function.
+   */
+  @Test
+  public void testNameStartWithMajEmpty() {
+    Fusee fusee = new Fusee();
+    assertThrows(Exception.class, () -> {
+        fusee.setName("");
+    });
+  }
+
+  /**
+   * testNameStartWithMajRandom test function.
    */
   @Test
   public void testNameStartWithMajRandom() {
