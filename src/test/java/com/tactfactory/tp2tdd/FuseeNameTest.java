@@ -11,9 +11,11 @@ public class FuseeNameTest {
 
   /**
    * testNameStartWithMajOk test function.
+   *
+   * @throws Exception to throw.
    */
   @Test
-  public void testNameStartWithMajOk() {
+  public void testNameStartWithMajOk() throws Exception {
     Fusee fusee = new Fusee();
     fusee.setName("AaaaA");
     GenericNameTest.nameStartWithMajOk(fusee.getName());
@@ -21,9 +23,11 @@ public class FuseeNameTest {
 
   /**
    * testNameStartWithMajKo test function.
+   *
+   * @throws Exception to throw.
    */
   @Test
-  public void testNameStartWithMajKo() {
+  public void testNameStartWithMajKo() throws Exception {
     Fusee fusee = new Fusee();
     fusee.setName("aAAAa");
     GenericNameTest.nameStartWithMajOk(fusee.getName());
@@ -36,7 +40,7 @@ public class FuseeNameTest {
   public void testNameStartWithMajNull() {
     Fusee fusee = new Fusee();
     assertThrows(Exception.class, () -> {
-        fusee.setName(null);
+      fusee.setName(null);
     });
   }
 
@@ -47,15 +51,17 @@ public class FuseeNameTest {
   public void testNameStartWithMajEmpty() {
     Fusee fusee = new Fusee();
     assertThrows(Exception.class, () -> {
-        fusee.setName("");
+      fusee.setName("");
     });
   }
 
   /**
    * testNameStartWithMajRandom test function.
+   *
+   * @throws Exception to throw
    */
   @Test
-  public void testNameStartWithMajRandom() {
+  public void testNameStartWithMajRandom() throws Exception {
     Fusee fusee = new Fusee();
     fusee.setName(StringUtils.getRandomString());
     GenericNameTest.nameStartWithMajOk(fusee.getName());
