@@ -31,16 +31,21 @@ public class FuseeCompartimentMini {
    */
   @Test
   public void testCompartimentDefaultOk2() throws Exception {
-    Fusee fusee = new Fusee();
+    final Fusee fusee = new Fusee();
 
-    Compartiment commandementOld = fusee.getCompartiements().stream().filter(x -> x.getType().equals("commandement")).findFirst().get();
-    Compartiment moteurOld = fusee.getCompartiements().stream().filter(x -> x.getType().equals("moteur")).findFirst().get();
+    final Compartiment commandementOld =
+        fusee.getCompartiements().stream()
+        .filter(x -> x.getType().equals("commandement")).findFirst().get();
 
-    Compartiment commandementNew = new Compartiment();
+    final Compartiment moteurOld =
+        fusee.getCompartiements().stream()
+        .filter(x -> x.getType().equals("moteur")).findFirst().get();
+
+    final Compartiment commandementNew = new Compartiment();
     commandementNew.setType("commandement");
     fusee.addCompartiment(commandementNew);
 
-    Compartiment moteurNew = new Compartiment();
+    final Compartiment moteurNew = new Compartiment();
     moteurNew.setType("moteur");
     fusee.addCompartiment(moteurNew);
 
@@ -62,14 +67,16 @@ public class FuseeCompartimentMini {
   public void testCompartimentDefaultKo1() throws Exception {
     Fusee fusee = new Fusee();
 
-    Compartiment moteurOld = fusee.getCompartiements().stream().filter(x -> x.getType().equals("moteur")).findFirst().get();
+    final Compartiment moteurOld =
+        fusee.getCompartiements().stream()
+        .filter(x -> x.getType().equals("moteur")).findFirst().get();
 
     Compartiment moteurNew = new Compartiment();
     moteurNew.setType("other");
     fusee.addCompartiment(moteurNew);
 
     assertThrows(Exception.class, () -> {
-        fusee.removeCompartiment(moteurOld);
+      fusee.removeCompartiment(moteurOld);
     });
   }
 
