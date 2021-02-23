@@ -81,7 +81,7 @@ public class FuseeCompartimentMini {
   }
 
   /**
-   * testCompartimentDefaultKo1 test function.
+   * testCompartimentDefaultKo2 test function.
    *
    * @throws Exception to throw.
    */
@@ -89,14 +89,16 @@ public class FuseeCompartimentMini {
   public void testCompartimentDefaultKo2() throws Exception {
     Fusee fusee = new Fusee();
 
-    Compartiment commandementOld = fusee.getCompartiements().stream().filter(x -> x.getType().equals("commandement")).findFirst().get();
+    final Compartiment commandementOld =
+        fusee.getCompartiements().stream()
+        .filter(x -> x.getType().equals("commandement")).findFirst().get();
 
     Compartiment commandementNew = new Compartiment();
     commandementNew.setType("other");
     fusee.addCompartiment(commandementNew);
 
     assertThrows(Exception.class, () -> {
-        fusee.removeCompartiment(commandementOld);
+      fusee.removeCompartiment(commandementOld);
     });
   }
 }
