@@ -1,6 +1,7 @@
 package com.tactfactory.tp2tdd;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.tactfactory.tp2tdd.models.Fusee;
 import com.tactfactory.tp2tdd.utils.GenericNameTest;
@@ -53,6 +54,66 @@ public class FuseeNameTest {
     assertThrows(Exception.class, () -> {
       fusee.setName("");
     });
+  }
+
+  /**
+   * testNameStartWithMajOneChar test function.
+   *
+   * @throws Exception to throw.
+   */
+  @Test
+  public void testNameStartWithMajOneChar() throws Exception {
+    Fusee fusee = new Fusee();
+    fusee.setName("a");
+    GenericNameTest.nameStartWithMajOk(fusee.getName());
+  }
+
+  /**
+   * testNameStartWithMajOneCharWitha test function.
+   *
+   * @throws Exception to throw.
+   */
+  @Test
+  public void testNameStartWithMajOneCharWitha() throws Exception {
+    Fusee fusee = new Fusee();
+    fusee.setName("a");
+    assertTrue(fusee.getName().equals("A"));
+  }
+
+  /**
+   * testNameStartWithMajOneCharWithA test function.
+   *
+   * @throws Exception to throw.
+   */
+  @Test
+  public void testNameStartWithMajOneCharWithA() throws Exception {
+    Fusee fusee = new Fusee();
+    fusee.setName("A");
+    assertTrue(fusee.getName().equals("A"));
+  }
+
+  /**
+   * testNameStartWithMajOneCharWithabcdef test function.
+   *
+   * @throws Exception to throw.
+   */
+  @Test
+  public void testNameStartWithMajOneCharWithabcdef() throws Exception {
+    Fusee fusee = new Fusee();
+    fusee.setName("abcdef");
+    assertTrue(fusee.getName().equals("Abcdef"));
+  }
+
+  /**
+   * testNameStartWithMajOneCharWithAbcdef test function.
+   *
+   * @throws Exception to throw.
+   */
+  @Test
+  public void testNameStartWithMajOneCharWithAbcdef() throws Exception {
+    Fusee fusee = new Fusee();
+    fusee.setName("Abcdef");
+    assertTrue(fusee.getName().equals("Abcdef"));
   }
 
   /**
