@@ -28,11 +28,11 @@ public class FuseeCompartimentSize {
   @Test
   public void testCompartimentOk2() throws Exception {
     Fusee fusee = new Fusee();
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 6; i++) {
       fusee.addCompartiment(new Compartiment());
     }
 
-    assertTrue(fusee.getCompartiements().size() == 6);
+    assertTrue(fusee.getCompartiements().size() == 10);
   }
 
   /**
