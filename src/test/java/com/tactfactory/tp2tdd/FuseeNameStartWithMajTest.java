@@ -8,7 +8,7 @@ import com.tactfactory.tp2tdd.utils.GenericNameTest;
 import com.tactfactory.tp2tdd.utils.StringUtils;
 import org.junit.jupiter.api.Test;
 
-public class FuseeNameTest {
+public class FuseeNameStartWithMajTest {
 
   /**
    * testNameStartWithMajOk test function.
