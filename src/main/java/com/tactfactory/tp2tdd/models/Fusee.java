@@ -81,7 +81,7 @@ public class Fusee {
    * @throws Exception to throw.
    */
   public void addCompartiment(Compartiment compartiment) throws Exception {
-    if (this.compartiments.size() + 1 > 6) {
+    if (this.compartiments.size() + 1 > 10) {
       throw new Exception();
     }
     this.compartiments.add(compartiment);
