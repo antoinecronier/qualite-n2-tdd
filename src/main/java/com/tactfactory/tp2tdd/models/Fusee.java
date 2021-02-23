@@ -1,5 +1,7 @@
 package com.tactfactory.tp2tdd.models;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -7,6 +9,16 @@ import java.util.regex.Pattern;
 public class Fusee {
 
   private String name;
+  private final List<Compartiment> compartiments;
+
+  /**
+   * Fusee constructor.
+   */
+  public Fusee() {
+    compartiments = new ArrayList<>();
+    compartiments.add(new Compartiment());
+    compartiments.add(new Compartiment());
+  }
 
   /**
    * setName.
@@ -53,6 +65,32 @@ public class Fusee {
   }
 
   public List<Compartiment> getCompartiements() {
-    return null;
+    return Collections.unmodifiableList(this.compartiments);
+  }
+
+  /**
+   * addCompartiment to add with rules.
+   *
+   * @param compartiment to add.
+   * @throws Exception to throw.
+   */
+  public void addCompartiment(Compartiment compartiment) throws Exception {
+    if (this.compartiments.size() + 1 > 6) {
+      throw new Exception();
+    }
+    this.compartiments.add(compartiment);
+  }
+
+  /**
+   * removeCompartiment to remove with rules.
+   *
+   * @param compartiment to remove.
+   * @throws Exception to throw.
+   */
+  public void removeCompartiment(Compartiment compartiment) throws Exception {
+    if (this.compartiments.size() - 1 < 2) {
+      throw new Exception();
+    }
+    this.compartiments.remove(compartiment);
   }
 }
