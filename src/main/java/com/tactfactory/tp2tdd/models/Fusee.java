@@ -16,8 +16,14 @@ public class Fusee {
    */
   public Fusee() {
     compartiments = new ArrayList<>();
-    compartiments.add(new Compartiment());
-    compartiments.add(new Compartiment());
+
+    final Compartiment commandement = new Compartiment();
+    commandement.setType("commandement");
+    this.compartiments.add(commandement);
+
+    final Compartiment moteur = new Compartiment();
+    moteur.setType("moteur");
+    this.compartiments.add(moteur);
   }
 
   /**
@@ -89,6 +95,14 @@ public class Fusee {
    */
   public void removeCompartiment(Compartiment compartiment) throws Exception {
     if (this.compartiments.size() - 1 < 2) {
+      throw new Exception();
+    }
+    if (this.compartiments.stream().filter(x -> x.getType().equals("commandement")).count() == 1
+        && compartiment.getType().equals("commandement")) {
+      throw new Exception();
+    }
+    if (this.compartiments.stream().filter(x -> x.getType().equals("moteur")).count() == 1
+        && compartiment.getType().equals("moteur")) {
       throw new Exception();
     }
     this.compartiments.remove(compartiment);
