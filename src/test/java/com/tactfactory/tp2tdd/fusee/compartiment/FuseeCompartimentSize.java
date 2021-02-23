@@ -3,6 +3,7 @@ package com.tactfactory.tp2tdd.fusee.compartiment;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.tactfactory.tp2tdd.models.Compartiment;
 import com.tactfactory.tp2tdd.models.Fusee;
 import org.junit.jupiter.api.Test;
 

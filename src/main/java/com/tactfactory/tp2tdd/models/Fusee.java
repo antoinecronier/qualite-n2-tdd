@@ -1,5 +1,6 @@
 package com.tactfactory.tp2tdd.models;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -49,5 +50,9 @@ public class Fusee {
   public String getName() {
 
     return this.name;
+  }
+
+  public List<Compartiment> getCompartiements() {
+    return null;
   }
 }
