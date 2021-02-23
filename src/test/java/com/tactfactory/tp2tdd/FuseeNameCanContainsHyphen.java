@@ -23,12 +23,12 @@ public class FuseeNameCanContainsHyphen {
   private int charLoop;
 
   /**
-   * testNameCannotContainsOtherThanAlphabetHyphenNumber test function.
+   * testNameCannotContainsOtherThanAlphabetHyphenNumberAll test function.
    *
    * @throws Exception to throw.
    */
   @Test
-  public void testNameCannotContainsOtherThanAlphabetHyphenNumber() throws Exception {
+  public void testNameCannotContainsOtherThanAlphabetHyphenNumberAll() throws Exception {
     Fusee fusee = new Fusee();
 
     for (charLoop = 32; charLoop < 127; charLoop++) {
@@ -42,5 +42,71 @@ public class FuseeNameCanContainsHyphen {
         });
       }
     }
+  }
+
+  /**
+   * testNameCannotContainsOtherThanAlphabetHyphenNumber1 test function.
+   *
+   * @throws Exception to throw.
+   */
+  @Test
+  public void testNameCannotContainsOtherThanAlphabetHyphenNumber1() throws Exception {
+    Fusee fusee = new Fusee();
+
+    assertThrows(Exception.class, () -> {
+      fusee.setName("A&zaeaze");
+    });
+  }
+
+  /**
+   * testNameCannotContainsOtherThanAlphabetHyphenNumber2 test function.
+   *
+   * @throws Exception to throw.
+   */
+  @Test
+  public void testNameCannotContainsOtherThanAlphabetHyphenNumber2() throws Exception {
+    Fusee fusee = new Fusee();
+    fusee.setName("Abcd-ef");
+    assertTrue(fusee.getName().equals("Abcd-ef"));
+  }
+
+  /**
+   * testNameCannotContainsOtherThanAlphabetHyphenNumber3 test function.
+   *
+   * @throws Exception to throw.
+   */
+  @Test
+  public void testNameCannotContainsOtherThanAlphabetHyphenNumber3() throws Exception {
+    Fusee fusee = new Fusee();
+    fusee.setName("Ab--cd-ef132");
+    assertTrue(fusee.getName().equals("Ab--cd-ef132"));
+  }
+
+  /**
+   * testNameCannotContainsOtherThanAlphabetHyphenNumber4 test function.
+   *
+   * @throws Exception to throw.
+   */
+  @Test
+  public void testNameCannotContainsOtherThanAlphabetHyphenNumber4() throws Exception {
+    Fusee fusee = new Fusee();
+
+    assertThrows(Exception.class, () -> {
+      fusee.setName("Azêeaze");
+    });
+  }
+
+  /**
+   * testNameCannotContainsOtherThanAlphabetHyphenNumber5 test function.
+   *
+   * @throws Exception to throw.
+   */
+  @Test
+  public void testNameCannotContainsOtherThanAlphabetHyphenNumber5() throws Exception {
+    Fusee fusee = new Fusee();
+
+    assertThrows(Exception.class, () -> {
+      fusee.setName("Azœeaze");
+    });
   }
 }
