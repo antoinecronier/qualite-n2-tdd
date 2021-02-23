@@ -1,6 +1,5 @@
-package com.tactfactory.tp2tdd;
+package com.tactfactory.tp2tdd.utils;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GenericNameTest {
@@ -18,6 +17,6 @@ public class GenericNameTest {
    * Printable other elements are 32->64 91->126
    */
   public static void nameStartWithMajKo(String test) {
-    assertFalse(test.charAt(0) < 65 || test.charAt(0) > 90);
+    assertTrue(test.charAt(0) < 65 || test.charAt(0) > 90);
   }
 }
