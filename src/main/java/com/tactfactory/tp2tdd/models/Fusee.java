@@ -1,5 +1,8 @@
 package com.tactfactory.tp2tdd.models;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Fusee {
 
   private String name;
@@ -27,6 +30,19 @@ public class Fusee {
         throw new Exception();
       }
     }
+    Pattern p = Pattern.compile("\\d+");
+    Matcher m = p.matcher(name);
+    String last = null;
+    int nbGroup = 0;
+    while (m.find()) {
+      last = m.group();
+      nbGroup++;
+    }
+
+    if (last != null && last != "" && !name.endsWith(last) || nbGroup > 1) {
+      throw new Exception();
+    }
+
     this.name = Character.toString(name.charAt(0)).toUpperCase() + name.substring(1).toLowerCase();
   }
 
